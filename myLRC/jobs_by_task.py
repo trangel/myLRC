@@ -21,3 +21,5 @@ def mkjob_by_task(jobname,dirname,cluster,nproc,modules):
     for iproc in range(1,nproc+1):
         f.write("cd 03-RPMNS/{}; bash run.sh\n".format(iproc))
     f.close()
+
+    # Write run files
