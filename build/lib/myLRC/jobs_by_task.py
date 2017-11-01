@@ -68,15 +68,15 @@ def mkjob_by_task(**kwargs):
     f = open(newfile,"w")
     f.write("#!/bin/bash -l\n")
     f.write("#SBATCH  --job-name={}\n".format(jobname))
-    if dirname == 'minnehaha' :
+    if cluster == 'minnehaha' :
         f.write("#SBATCH  --qos=condo_minnehaha\n")
         f.write("#SBATCH  --account=lr_minnehaha\n")
         f.write("#SBATCH  --partition=lr4\n")
-    elif dirname == 'nokomis' :
+    elif cluster == 'nokomis' :
         f.write("#SBATCH  --qos=condo_nokomis\n")
         f.write("#SBATCH  --account=lr_nokomis\n")
         f.write("#SBATCH  --partition=lr3\n")
-    elif dirname == 'catamount' :
+    elif cluster == 'catamount' :
         f.write("#SBATCH  --qos=cm_medium\n")
         f.write("#SBATCH  --account=catamount\n")
         f.write("#SBATCH  --partition=catamount\n")
